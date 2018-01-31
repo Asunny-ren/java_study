@@ -2,7 +2,7 @@
 
 * 拓展运算符不改变类型
 
-``` code
+``` java
   byte i = 10;
 
   // i = i + 10;编译不通过，java语言中存在变量类型转换，小精度可以转换为大精度的，但是大精度转小精度会损失精度，通过强制转换类型
@@ -15,7 +15,7 @@
 
 * break & return
 
-``` code
+``` java
 public class BreakTest{
   public static void main(String[] args) {
     for (int i = 0; i < 10; i++) {
@@ -30,7 +30,7 @@ public class BreakTest{
 }
 ```
 
-``` code
+``` java
 public class BreakTest {
   public static void main (String[] args) {
     /* for(int i = 5; i > 0; i--) {
@@ -56,7 +56,7 @@ public class BreakTest {
 
 * continue
 
-``` code
+``` java
 public class ContinueTest{
   public static void main (String[], args) {
     for(int i = 0; i < 10; i++) {

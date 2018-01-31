@@ -23,7 +23,7 @@
 
   **static定义的静态语句块在类加载阶段执行，并且只执行一次，并且是自上而下执行**
 
-  ``` code
+  ``` java
 
   public class statictTest{
 
@@ -64,7 +64,7 @@
 
   > 每次调用构造方法之前会执行一次
 
-  ``` code
+  ``` java
     public class staticTest{
 
       // 静态语句块
@@ -112,7 +112,7 @@
 
   > static修饰的方法，一般情况工具类中的方法都是静态方法，不用创建对象也能直接访问该方法
 
-``` code
+``` java
   public class staticTest{
 
     // 成员方法
@@ -186,7 +186,7 @@
 
   ```
 
-  ``` code
+  ``` java
 
     public class staticTest{
       // 入口
@@ -229,7 +229,7 @@
 
 * static 执行顺序
 
-``` code
+``` java
   public class staticTest{
 
     // 编译通过
@@ -253,7 +253,7 @@
   **如果==两边都是基本数据类型，可以比较这两个基本数据类型是否相等。如果两边是引用数据类型，则比较的是内存地址**
 
 
-``` code
+``` java
 // 懒汉单例
 public class test{
 
@@ -290,7 +290,7 @@ class Singleton{
 
 ```
 
-``` code
+``` java
 // 饿汉式单例
 class Singleton{
 
@@ -318,7 +318,7 @@ class Singleton{
 
   > 注意：构造方法无法继承
 
-  ``` code
+  ``` java
 
     //Super.class
     public class Super () {
@@ -395,7 +395,7 @@ class Singleton{
 
   > this和super一样，都不能用在静态上下文中
 
-  ``` hash
+  ``` java
 
   # Employee.class
   public class Employee{
@@ -450,7 +450,7 @@ class Singleton{
 
   ```
 
-  ``` hash
+  ``` java
   # final修饰的类不能被继承
   public final class A {}
   // error
@@ -505,7 +505,7 @@ class Singleton{
 
   > 抽象类不能被final修饰，抽象方法不能被final修饰
 
-``` hash
+``` java
 
   # 抽象类无法被实例化,但是抽象类也有构造方法，该构造方法是给子类创建对象用的。
   public abstract class A{
@@ -533,7 +533,7 @@ class Singleton{
 
 ```
 
-``` hash
+``` java
   # 抽象类中可以定义抽象方法,没有方法体
   public abstract void m1();
 
@@ -592,7 +592,7 @@ class Singleton{
 
   > 但是final修饰的引用，该引用指向的对象的属性是可以修改的。
 
-  ``` hash
+  ``` java
 
   public class Test {
 
