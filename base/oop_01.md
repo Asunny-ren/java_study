@@ -584,8 +584,6 @@ class Singleton{
 
 ```
 
-
-
 ### 补充深入final
 
   > final修饰的引用类型，该引用不可再重新指向其他的java对象。

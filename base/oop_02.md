@@ -68,18 +68,16 @@ class Person () {
 ```
 
 * finalize
-    
+
     > 垃圾回收机制 GC
 
 * hashCode
 
     > hashCode方法返回的是该对象的哈希码值，java对象的内存地址经过哈希算法得出的int类型的数值。
 
-
 ## package
 
     > pakage放在程序的第一行，import导入包放在package和class之间，
-
 
 ## 访问权限控制
 
@@ -101,7 +99,6 @@ protected  |  Y  |  Y  |  Y  |  N
 public     |  Y  |  Y  |  Y  |  Y
 
 **在user.java文件中类user只能用public或者缺省修饰**
-
 
 ## inner_class 内部类
 
@@ -277,7 +274,7 @@ interface CustomerService {
 
 class CustomerServiceImpl implments CustomerService {
     public void logout () {
-        System.out.println("退出系统");
+        System.out.pri  ntln("退出系统");
     }
 }
 ```
@@ -312,3 +309,5 @@ interface CustomerService {
     void logout();
 }
 ```
+
+
