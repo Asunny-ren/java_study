@@ -111,7 +111,6 @@ public class ContinueTest{
 * 构造方法
 
 ``` code
-
     静态方法 类名.xxx  ()
     成员方法 引用.xxx  (set,get)
 
