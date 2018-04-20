@@ -137,13 +137,13 @@ public class ExceptionTest{
 // 自定义异常类
 public class IllegalNameException extends Exception{
 //public class IllegalNameException extends RuntimeException{
-    
+
     public IllegalNameException() {}
 
     public IllegalNameException(String msg) {
         super(msg);
     }
-    
+
 }
 
 
