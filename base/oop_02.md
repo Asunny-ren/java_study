@@ -274,7 +274,7 @@ interface CustomerService {
 
 class CustomerServiceImpl implments CustomerService {
     public void logout () {
-        System.out.pri  ntln("退出系统");
+        System.out.println("退出系统");
     }
 }
 ```
