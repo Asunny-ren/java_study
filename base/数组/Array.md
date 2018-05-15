@@ -9,7 +9,6 @@
 > 查找效率高，随意的增删元素效率低
 
 ``` java
-
 public class ArrayTest {
     public static void main(String[] args) {
         // a引用中保存的是一维数组的首元素的内存地址
@@ -25,5 +24,57 @@ public class ArrayTest {
         int[] a1 = new int[4];
     }
 }
-
+//   无论是动态初始化还是静态初始化，最终的内存分布是一样的
 ```
+
+``` java
+public class Test {
+    public static void main(String[] args) {
+        //第一种方式
+        int[] a = {1,2,3,4,5};
+        m1(a);
+
+        // 第二种方式
+        m1(new int[]{3,4,5,6,7});
+    }
+
+    public static void m1 (int[] a) {
+        for(int i=0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+    }
+}
+```
+
+* String[] args是专门用来接收命令行参数的，例如，java Test aa bb cc
+
+> JVM在调用Test类的main方法之前，先“aa bb cc”这个字符串以空格的方式分割，然后存储在String数组中
+
+### 数组拷贝
+
+``` java
+    public class Test {
+        public static void main (String[] args) {
+            int[] a = {1,2,3,4,5};
+            int[] b = {11,12,13,14,15};
+            //System.arraycopy(源数组, 源数组开始下标, 目标数组, 目标数组开始下标, 拷贝长度);
+            System.arraycopy(a, 1, b, 3, 2);
+        }
+    }
+```
+
+### 二维数组
+
+``` java
+public class Test {
+    public static void main(String[] args) {
+        // 静态初始化二维数组
+        int[][] a = {{}, {}, {}, {}};
+
+        // 动态初始化二维数组
+        int[][] b = new int[3][4];
+    }
+}
+```
+
+### 冒泡排序

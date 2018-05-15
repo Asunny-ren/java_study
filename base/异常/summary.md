@@ -126,7 +126,6 @@ public class ExceptionTest{
 
 * finally 异常处理机制中的finally语句块
 
-
 ### 自定义异常
 
 ``` java
@@ -173,7 +172,7 @@ public class Test {
         CustomerService cs = new CustomerService();
 
         try{
-             cs.register(name);
+            cs.register(name);
         }catch(IllegalNameException e) {
             System.out.println(e.getMessages());
         }
@@ -211,5 +210,4 @@ class B extends A {
     //public void m1() throws IOException {}
     public void m1() throws FileNotFoundException {}
 }
-
 ```
