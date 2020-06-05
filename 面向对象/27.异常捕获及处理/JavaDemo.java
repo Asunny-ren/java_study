@@ -1,9 +1,8 @@
 public class JavaDemo {
-  public static void main(String args[]) {
-    try{
-      throw new Exception("自己抛着玩的异常对象");
-    }catch(Exception e) {
-      e.printStackTrace();
-    }
+  public static void main(String args[]) throws Exception {
+    int x = 10;
+    // 中间会经过许多的x变量的操作步骤
+    assert x == 100 : "x的内容不是100";
+    System.out.println(x);
   }
 }

@@ -200,7 +200,7 @@ public class JavaDemo {
 // result
 
 // java.lang.Exception: 自己抛着玩的异常对象
-// 	at JavaDemo.main(JavaDemo.java:4)
+// at JavaDemo.main(JavaDemo.java:4)
 ```
 
 throw和throws区别
@@ -209,18 +209,122 @@ throw: 是在代码块中使用的，主要是手工进行异常对象的抛出�
 
 throws：是在方法定义上使用的，表示将此方法中可能产生的异常告诉调用处，由调用处处理
 
-
 ## 异常处理模型
 
+``` java
+class MyMath {
+  // 异常交给被调用处处理则一定要在方法上使用throws
+  public static int div (int x, int y) throws Exception {
+    int temp = 0;
+    System.out.println("【开始】******");
+    try {
+      temp = x / y;
+    } catch (Exception e) {
+      throw e; // 向上抛异常对象
+    }finally {
+      System.out.println("【结束】******");
+    }
+    return temp; 
+  }
+}
 
+public class JavaDemo {
+  public static void main(String args[]) {
+    try{
+      System.out.println(MyMath.div(10, 0));
+    }catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+``` java
+// 简化版
+class MyMath {
+  public static int div (int x, int y) throws Exception {
+    int temp = 0;
+    System.out.println("【开始】******");
+    try {
+      temp = x / y;
+    } finally {
+      System.out.println("【结束】******");
+    }
+    return temp;
+  }
+}
+
+public class JavaDemo {
+  public static void main(String args[]) {
+    try{
+      System.out.println(MyMath.div(10, 0));
+    }catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+```
 
 ## RuntimeException
 
+RuntimeException与Exception的区别？
 
+  * RuntimeException是Exception的子类
+
+  * RuntimeException标注的异常可以不需要进行强制性处理，而Exception异常必须强制性处理
+
+常见的RuntimeException异常： NumberFormatException、ClassCastException、NullPointerException
 
 ## 自定义异常类
 
+自定义异常有两种实现：继承Exception或者继承RuntimeException
 
+``` java
+// 自定义异常
+class BombException extends Exception {
+  public BombException (String msg){
+    super(msg);
+  }
+}
+
+class Food {
+  public static void eat(int num) throws BombException{
+    if(num > 10) {
+      throw new BombException("吃太多了，肚子爆炸了");
+    }else {
+      System.out.println("正常开始吃，不怕胖");
+    }
+  }
+}
+
+public class JavaDemo {
+  public static void main(String args[]) throws Exception {
+    Food.eat(12);
+  }
+}
+```
 
 ## assert断言
 
+确定代码执行到某行之后一定是所期待的结果，在实际开发之中，对于断言而言并不一定是准确的，也有可能出现偏差，但是这种偏差不应该影响程序的正常执行。
+
+``` java
+public class JavaDemo {
+  public static void main(String args[]) throws Exception {
+    int x = 10;
+    // 中间会经过许多的x变量的操作步骤
+    assert x == 100 : "x的内容不是100";
+    System.out.println(x);
+  }
+}
+
+// $ java JavaDemo
+
+// result: 10
+
+
+// $ java -ea JavaDemo 启用断言
+
+// Exception in thread "main" java.lang.AssertionError: x的内容不是100
+// 	at JavaDemo.main(JavaDemo.java:5)
+```
